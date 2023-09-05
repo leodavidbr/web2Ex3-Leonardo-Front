@@ -1,0 +1,25 @@
+<h4 class="display-4 text-center">{{usuario?.pessoa?.nome}}
+    <pre></pre> {{usuario?.email}}
+</h4>
+
+<div class="container">
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>Papel</th>
+                <th>Prioridade</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let papel of usuario?.papeis">
+                <td>
+                    {{papel.nome}}
+                </td>
+                <td>
+                    +{{papel.prioridade}}
+                </td>
+            </tr>
+        </tbody>
+
+    </table>
+</div>

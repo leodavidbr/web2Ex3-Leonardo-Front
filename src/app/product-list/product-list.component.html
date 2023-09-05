@@ -1,0 +1,45 @@
+<h2 class="text-center display-4">Usuarios do Sistema</h2>
+<div class="container">
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>Nome do usuario</th>
+                <th>Email</th>
+                <th>Mais detalhes</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let product of products">
+                <td>
+                    {{product.pessoa.nome}}
+                </td>
+                <td>
+                    {{product.email}}
+                </td>
+                <td>
+                    <button [routerLink]="['/products', product.idUsuario]" class="btn-primary"> ver papeis<span
+                            class="badge text-warning">{{product.papeis.length}}</span>
+                    </button>
+                </td>
+            </tr>
+        </tbody>
+
+    </table>
+</div>
+
+
+<!-- <p *ngFor="let papel of product.papeis">
+    {{papel.nome}}, Prioridade +{{papel.prioridade}}
+</p> -->
+<!-- <h3>
+        <a [title]="product.name + ' details'" [routerLink]="['/products', product.id]">
+            {{ product.name }}
+        </a>
+    </h3>
+
+    <p *ngIf="product.description">
+        Description: {{ product.description }}
+    </p> -->
+
+
+<!-- </div> -->
