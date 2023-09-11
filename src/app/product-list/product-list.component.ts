@@ -9,7 +9,7 @@ import { UsuarioService } from 'src/service/usuario.service';
   styleUrls: ['./product-list.component.css']
 })
 export class ProductListComponent {
-  products: IUsuario[] = [];
+  usuarios: IUsuario[] = [];
 
   constructor(private usuarioService: UsuarioService) {
     this.obterTodasPessoas();
@@ -17,13 +17,7 @@ export class ProductListComponent {
 
   obterTodasPessoas() {
     this.usuarioService.obterTodos()
-      .then(usuarios => this.products = usuarios != undefined ? usuarios : [])
+      .then(usuarios => this.usuarios = usuarios ?? [])
       .catch(error => console.error('erro'));
   }
-
-  share() {
-    window.alert('The product has been shared!');
-  }
-
-
 }

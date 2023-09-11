@@ -12,7 +12,8 @@ export class ProductDetailsComponent implements OnInit {
 
   usuario: IUsuario | undefined;
 
-  constructor(private usuarioService: UsuarioService, private route: ActivatedRoute) {
+  constructor(private usuarioService: UsuarioService,
+    private route: ActivatedRoute) {
   }
 
   ngOnInit(): void {
@@ -27,4 +28,6 @@ export class ProductDetailsComponent implements OnInit {
       .then(usuario => this.usuario = usuario)
       .catch(error => console.error('erro'));
   }
+
+
 }

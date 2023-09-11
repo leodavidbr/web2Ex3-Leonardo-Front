@@ -9,16 +9,16 @@
             </tr>
         </thead>
         <tbody>
-            <tr *ngFor="let product of products">
+            <tr *ngFor="let usuario of usuarios">
                 <td>
-                    {{product.pessoa.nome}}
+                    {{usuario.pessoa.nome}}
                 </td>
                 <td>
-                    {{product.email}}
+                    {{usuario.email}}
                 </td>
                 <td>
-                    <button [routerLink]="['/products', product.idUsuario]" class="btn-primary"> ver papeis<span
-                            class="badge text-warning">{{product.papeis.length}}</span>
+                    <button [routerLink]="['/products', usuario.id]" class="btn-primary"> ver papeis<span
+                            class="badge text-warning">{{usuario.papeis.length}}</span>
                     </button>
                 </td>
             </tr>
@@ -26,6 +26,9 @@
 
     </table>
 </div>
+<button [routerLink]="['/cadastrarUsuario']" class="btn-primary">Cadastrar Usuario</button>
+
+
 
 
 <!-- <p *ngFor="let papel of product.papeis">

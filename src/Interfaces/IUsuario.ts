@@ -5,7 +5,7 @@ export interface IUsuario {
     }
 
     email: String,
-    idUsuario: Number,
+    id: Number,
     papeis: [
         {
             id: Number,
