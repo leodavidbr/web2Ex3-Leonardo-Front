@@ -1,1 +1,19 @@
-<p>cadastrar-usuario works!</p>
+<form [formGroup]="checkoutForm" (ngSubmit)="onSubmit()" class="add-usuario-form">
+
+    <mat-form-field>
+        <mat-label>Enter your email</mat-label>
+        <input matInput placeholder="pat@example.com" formControlName="email" required type="email">
+        <!-- <mat-error *ngIf="email.invalid">{{getErrorMessage()}}</mat-error> -->
+    </mat-form-field>
+
+    <mat-form-field formGroupName="pessoa">
+        <mat-label>Pessoa</mat-label>
+        <mat-select formControlName="id" name="idPessoa" type="number">
+            <mat-option value=1>Paulo Vitor</mat-option>
+            <mat-option value=2>Fouquet</mat-option>
+            <mat-option value=2>Leonardo David</mat-option>
+        </mat-select>
+    </mat-form-field>
+
+    <button class="button" type="submit" color="primary" mat-raised-button>Cadastrar</button>
+</form>

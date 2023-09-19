@@ -1,5 +1,6 @@
-import { Component } from '@angular/core';
-import { FormBuilder } from '@angular/forms';
+import { Component, ViewChild } from '@angular/core';
+import { FormBuilder, NgForm, ReactiveFormsModule } from '@angular/forms';
+import { UsuarioService } from 'src/service/usuario.service';
 
 @Component({
   selector: 'app-cadastrar-usuario',
@@ -8,17 +9,26 @@ import { FormBuilder } from '@angular/forms';
 })
 export class CadastrarUsuarioComponent {
 
+
   checkoutForm = this.formBuilder.group({
-    name: String,
-    email: String
+    pessoa: this.formBuilder.group({
+      id: Number
+    }),
+    // idPessoa: Number,
+    email: "",
+    papeis: Array<number>
   });
 
-  constructor(private formBuilder: FormBuilder) {
+  constructor(
+    private usuarioService: UsuarioService,
+    private formBuilder: FormBuilder) {
 
   }
 
   onSubmit(): void {
-    // this.checkoutForm.value.id?
+    console.log("idPessoa is: ", this.checkoutForm.value.pessoa?.id);
+    console.log("value is: ", this.checkoutForm.value);
+    this.usuarioService.cadastrarUsuario(this.checkoutForm.value)
     this.checkoutForm.reset();
   }
 
